@@ -1,12 +1,12 @@
 <template>
     <article>
         <div>
-            <img src="#" alt="#">
-            <p>Lose Yourself</p><br>
-            <p>Eminem</p>
+            <img :src="music.artist.picture" alt="image de la musique">
+            <p>Titre :  {{music.title}}</p><br>
+            <p>Artiste :{{music.artist.name}}</p>
         </div>
         <div>
-            <audio src="#"></audio>
+            <audio :src="music.preview" controls></audio>
             <br>
             <div class="fav">
                 <p>Ajouter aux favoris</p>
@@ -17,7 +17,10 @@
 
 <script>
 export default {
-    name: 'CardMusic'
+    name: 'CardMusic',
+    props: {
+        music: Object
+    }
 }
 </script>
 
