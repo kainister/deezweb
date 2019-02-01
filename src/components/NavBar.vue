@@ -3,6 +3,7 @@
     <div class="container">
       <router-link to="/">Accueil</router-link>
       <router-link to="/search">Recherche</router-link>
+      <router-link to="/fav">Favoris</router-link>
     </div>
   </nav>
 </template>
