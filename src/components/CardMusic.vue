@@ -6,10 +6,10 @@
             <p>Artiste :{{music.artist.name}}</p>
         </div>
         <div>
-            <audio :src="music.preview" controls></audio>
+            <audio :src="music.preview" controls class="preview"></audio>
             <br>
             <div>
-                <button class="fav" @click="addToFav(music.key)">Ajouter aux favoris</button>
+                <button class="fav" @click="addToFav()">Ajouter aux favoris</button>
             </div>
         </div>
     </article>
@@ -27,8 +27,9 @@ export default {
         music: Object,
     },
     methods: {
-        addToFav(key) {
-            this.favMusic.push(this.music[key]);
+        addToFav() {
+            localStorage.removeItem('favoriteSong');
+            this.favMusic.push(this.music);
             localStorage.setItem('favoriteSong', JSON.stringify(this.favMusic));
         }
     },
@@ -37,7 +38,12 @@ export default {
 
 <style>
 article {
-    margin: 20px 0;
+    border: solid black 1px;
+    margin: 20px 5px;
+    height: 300px;
+}
+.preview {
+    max-width: 250px;
 }
 .fav {
    background-color: red;

@@ -36,7 +36,7 @@ export default {
         return {
             title: '',
             music: null,
-            searchBy: 'ARTIST_ASC'
+            searchBy: 'RANKING_ASC'
         }
     },
     components: {
