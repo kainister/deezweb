@@ -17,7 +17,7 @@
             <br>
             <button type="submit">Submit</button>
         </form>
-        <div v-if="music">
+        <div v-if="music" class="musics">
             <CardMusic v-for="(item, index) in music.data" :key="index" :music="item" />
         </div>
         <div v-else>
@@ -54,5 +54,8 @@ export default {
 </script>
 
 <style>
-
+.musics {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
 </style>
