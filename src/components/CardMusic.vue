@@ -28,9 +28,10 @@ export default {
     },
     methods: {
         addToFav() {
-            //if(localStorage.getItem('favoriteSong') === null) {
+            if (localStorage.getItem('favoriteSong') !== null) {
                 this.favMusic = JSON.parse(localStorage.getItem('favoriteSong'));
-            //}
+            }
+            console.log(localStorage.getItem('favoriteSong'));
             localStorage.removeItem('favoriteSong');
             this.favMusic.push(this.music);
             localStorage.setItem('favoriteSong', JSON.stringify(this.favMusic));
